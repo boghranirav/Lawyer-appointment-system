@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MstHeaderFooter.master.cs" Inherits="MstHeaderFooter" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Find easily a doctor and book online an appointment">
+	<meta name="author" content="Ansonika">
+
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+	<!-- BASE CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/menu.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+	<link href="css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+    
+	<!-- YOUR CUSTOM CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+
+    <link href="css/date_picker.css" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <form id="Form1" runat="server" method="post">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
+   
+    <div id="preloader" class="Fixed">
+        <div data-loader="circle-side"></div>
+    </div>
+	
+	<div id="page">		
+        <header class="header_sticky">	
+		<a href="#menu" class="btn_mobile">
+			<div class="hamburger hamburger--spin" id="hamburger">
+				<div class="hamburger-box">
+					<div class="hamburger-inner"></div>
+				</div>
+			</div>
+		</a>
+		<!-- /btn_mobile-->
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-6">
+					<div id="logo_home">
+						<h1><a href="index.aspx" title="Findoctor">Find Lawyer</a></h1>
+					</div>
+				</div>
+				<div class="col-lg-9 col-6">
+					<nav id="menu" class="main-menu">
+						<ul runat="server" id="lblAction">
+							<li>
+								<span><a href="#0">Action</a></span>
+								<ul>
+									<li><a href="login.aspx">Login</a></li>
+									<li><a href="register.aspx">Register</a></li>
+								</ul>
+							</li>
+						</ul>
+                        <ul runat="server" id="lblUser" >
+							<li>
+								<span><a href="#0">Menu</a></span>
+								<ul>
+									<li><a href="profile.aspx">My Profile</a></li>
+									<li><a href="view_appointment.aspx">My Appointments</a></li>
+								</ul>
+							</li>
+						</ul>
+                        <ul runat="server" id="lblLogin">
+							<li>
+								<span><a href="login.aspx">Login</a></span>
+							</li>
+						</ul>
+                        <ul runat="server" id="lblLogout" >
+							<li>
+								<span><a href="logout.aspx">Logout</a></span>
+							</li>
+						</ul>
+					</nav>
+					<!-- /main-menu -->
+				</div>
+			</div>
+		</div>
+		<!-- /container -->
+	</header>
+	        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+
+        <footer>
+		<div class="container margin_60_35">
+			<div class="row">
+				<div class="col-lg-3 col-md-12">
+					<p>
+						<a href="index.html" title="Findoctor">
+							<img src="img/logo.png" data-retina="true" alt="" width="163" height="36" class="img-fluid">
+						</a>
+					</p>
+				</div>
+				<div class="col-lg-3 col-md-4">
+					<h5>Contact with Us</h5>
+					<ul class="contacts">
+						<li><a href="tel://61280932400"><i class="icon_mobile"></i> + 61 23 8093 3400</a></li>
+					</ul>
+					
+				</div>
+			</div>
+			<!--/row-->
+			<hr>
+			<div class="row">
+				<div class="col-md-8">
+					<ul id="additional_links">
+						<li><a href="#0">Terms and conditions</a></li>
+						<li><a href="#0">Privacy</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div id="copy">© 2018 Find Lawyer</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+    </div>
+
+         </form>
+	<div id="toTop"></div>
+	
+    <script data-cfasync="false" src="../cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/common_scripts.min.js"></script>
+	<script src="js/functions.js"></script>
+
+    <script src="js/bootstrap-datepicker.js"></script>
+	<script>
+		$('#calendar').datepicker({
+			todayHighlight: true,
+			daysOfWeekDisabled: [0],
+			weekStart: 1,
+			format: "yyyy-mm-dd",
+			datesDisabled: ["2017/10/20", "2017/11/21", "2017/12/21", "2018/01/21", "2018/02/21", "2018/03/21"],
+		});
+	</script>
+</body>
+</html>

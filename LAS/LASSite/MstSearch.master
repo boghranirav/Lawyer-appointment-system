@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MstHeaderFooter.master" AutoEventWireup="true" CodeFile="MstSearch.master.cs" Inherits="MstSearch" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="title" Runat="Server">
+    <asp:ContentPlaceHolder ID="title" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <main>
+		<div class="hero_home version_2">
+			<div class="content">
+				<h3>Find a Lawyer!</h3>
+
+					<div id="custom-search-input">
+						<div class="input-group">
+							
+                           <asp:TextBox ID="searchQuery" runat="server" class="search-query" ontextchanged="searchQuery_TextChanged"></asp:TextBox>             
+                                        <asp:AutoCompleteExtender ID="AutoCompleteExtender1" 
+                                              runat="server" 
+                                              DelimiterCharacters="" 
+                                              Enabled="True" 
+                                              ServicePath="~/index.aspx" 
+                                              ServiceMethod="GetCompletionList"
+                                              TargetControlID="searchQuery"
+                                              MinimumPrefixLength="1" 
+                                              CompletionInterval="10" 
+                                              EnableCaching="true"
+                                              CompletionSetCount="12"
+                                              FirstRowSelected="true"
+                                              
+                                              >
+                                        </asp:AutoCompleteExtender>
+
+							<asp:Button runat="server" class="btn_search" Text="Search" ID="btnSearch" OnClick="btnSearch_Click" />
+						</div>
+					</div>
+			</div>
+		</div>
+
+		
+
+		
+	</main>
+
+    <asp:ContentPlaceHolder ID="contbody" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
